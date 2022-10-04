@@ -1,0 +1,20 @@
+PODS:
+  - DelaunaySwift (0.1.2)
+  - ISEmojiView (0.3.2)
+
+DEPENDENCIES:
+  - DelaunaySwift (= 0.1.2)
+  - ISEmojiView (= 0.3.2)
+
+SPEC REPOS:
+  trunk:
+    - DelaunaySwift
+    - ISEmojiView
+
+SPEC CHECKSUMS:
+  DelaunaySwift: ef38c11ba100670bc7405e87e08465ac9a64d0ca
+  ISEmojiView: 58675ffd39b268c49cefd4924643552b94ef1d6c
+
+PODFILE CHECKSUM: 4d754b237609d05a37fc5b05a7a0d9b6080e887d
+
+COCOAPODS: 1.11.3

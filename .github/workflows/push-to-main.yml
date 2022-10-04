@@ -1,0 +1,25 @@
+name: push-to-main
+
+on:
+  push:
+    branches: [ main ]
+    
+concurrency: 
+    group: ${{ github.ref }}
+    cancel-in-progress: true
+
+jobs:
+  Release:
+    runs-on: macos-11
+    env:
+      KEYCHAIN_PASSWORD: ${{ secrets.KEYCHAIN_PASSWORD }}
+      CERTIFICATE_PASSWORD: ${{ secrets.CERTIFICATE_PASSWORD }}
+    steps:
+      - uses: actions/checkout@v3
+      - name: Install Gems and Pods
+        run: |
+            gem install bundler:2.3.11
+            bundle install
+            bundle exec pod install
+      - name: Release App
+        run: bundle exec fastlane release
